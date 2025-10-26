@@ -1,0 +1,41 @@
+rules:
+  - when: "generating commit message"
+    instruction: |
+      Rules for creating a great commit message
+
+      1. **Structure**
+         - Format: `<type>: <subject>` (follow Conventional Commits)
+         - Separate subject from body with a blank line.
+
+      2. **Subject Line**
+         - Limit to 50 characters.
+         - Capitalize the first word.
+         - Do **not** end with a period.
+         - Use the **imperative mood**, as if giving a command.
+           Example: `feat: Add login validation`
+         - Use types such as:
+           - feat: new feature
+           - fix: bug fix
+           - docs: documentation changes
+           - style: formatting, missing semi colons, etc.
+           - refactor: code change that neither fixes a bug nor adds a feature
+           - perf: performance improvement
+           - test: adding or updating tests
+           - chore: maintenance tasks
+
+      3. **Body**
+         - Wrap each line at 72 characters.
+         - Explain **what** and **why**, not **how**.
+         - Be specific and concise.
+
+      4. **Examples**
+         `feat: Add unit tests for user authentication`
+         `fix: Resolve crash when user logs out`
+         `chore: Update dependencies to latest versions`
+
+      5. **Tone**
+         - Be clear, consistent, and action-oriented.
+         - Avoid filler words or vague phrases.
+
+      ---
+      TL;DR: Write commit messages like short, clear commands that describe what you changed and why.
