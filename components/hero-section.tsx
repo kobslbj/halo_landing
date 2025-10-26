@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Sparkles, Coffee } from "lucide-react";
 import { LightRays } from "@/components/ui/light-rays";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { WaitlistForm } from "@/components/waitlist-form";
 
 export function HeroSection() {
   return (
@@ -56,21 +57,14 @@ export function HeroSection() {
             <span className="font-semibold text-stone-900">深度</span>
           </p>
 
+          {/* Waitlist 表單 */}
+          <div className="mt-10 w-full flex justify-center animate-fade-in-up delay-600">
+            <WaitlistForm />
+          </div>
+
           {/* CTA 按鈕 */}
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-600">
-            <Link href="#waitlist">
-              <ShimmerButton
-                className="shadow-2xl"
-                shimmerColor="#f97316"
-                background="linear-gradient(to right, #f97316, #ea580c)"
-                shimmerSize="0.1em"
-              >
-                <span className="text-center text-base font-semibold leading-none tracking-tight whitespace-pre-wrap text-white">
-                  加入等待名單
-                </span>
-              </ShimmerButton>
-            </Link>
-            <Link href="#mentor">
+          <div className="mt-6 flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-800">
+            <Link href="/become-a-mentor">
               <ShimmerButton className="shadow-2xl">
                 <span className="text-center text-base font-semibold leading-none tracking-tight whitespace-pre-wrap text-white">
                   成為 Mentor

@@ -20,22 +20,10 @@ export function Header() {
 
           {/* CTA Buttons */}
           <div className="flex items-center gap-3">
-            <Link href="#mentor">
+            <Link href="/become-a-mentor">
               <ShimmerButton className="shadow-lg px-5 py-2">
                 <span className="text-center text-sm font-medium leading-none tracking-tight whitespace-nowrap text-white">
                   成為 Mentor
-                </span>
-              </ShimmerButton>
-            </Link>
-            <Link href="#waitlist">
-              <ShimmerButton
-                className="shadow-lg px-5 py-2"
-                shimmerColor="#f97316"
-                background="linear-gradient(to right, #f97316, #ea580c)"
-                shimmerSize="0.08em"
-              >
-                <span className="text-center text-sm font-medium leading-none tracking-tight whitespace-nowrap text-white">
-                  加入等待名單
                 </span>
               </ShimmerButton>
             </Link>
