@@ -37,7 +37,8 @@ const siteConfig = {
   name: "Halo - 讓有溫度的連結再次出現。",
   description:
     "一個真實的真人互助網路。我們不僅媒合有意義的連結，更結合「Halo Space」實體據點，讓你的每一次啟發，都從一杯有溫度的咖啡開始。",
-  //url: "https://halo.com",
+  url: "https://halo-landing-six.vercel.app",
+  ogImage: "/og-image.png",
 };
 export const metadata: Metadata = {
   title: siteConfig.name,
@@ -46,13 +47,24 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
-    //url: siteConfig.url,
+    url: siteConfig.url,
+    siteName: "Halo",
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+    locale: "zh_TW",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    //images: [siteConfig.url],
+    images: [siteConfig.ogImage],
   },
 };
 
