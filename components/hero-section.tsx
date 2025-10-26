@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Sparkles, Coffee } from "lucide-react";
 import { LightRays } from "@/components/ui/light-rays";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { TextAnimate } from "@/components/ui/text-animate";
 import { WaitlistForm } from "@/components/waitlist-form";
 
 export function HeroSection() {
@@ -30,7 +31,7 @@ export function HeroSection() {
       <div className="container relative z-10 mx-auto px-4 py-20">
         <div className="flex flex-col items-center text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm border border-stone-200 px-4 py-2 mb-8 shadow-sm animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm border border-stone-200 px-4 py-2 mb-8 shadow-sm">
             <Sparkles className="w-4 h-4 text-stone-600" />
             <span className="text-sm font-medium text-stone-700">
               Introduce a new way to connect.
@@ -38,7 +39,7 @@ export function HeroSection() {
           </div>
 
           {/* 主標題 */}
-          <h1 className="font-serif text-4xl font-bold tracking-tight text-stone-900 md:text-6xl lg:text-7xl max-w-4xl animate-fade-in-up delay-200">
+          <h1 className="font-serif text-4xl font-bold tracking-tight text-stone-900 md:text-6xl lg:text-7xl max-w-4xl">
             重新定義了
             <br />
             一場好的
@@ -50,20 +51,22 @@ export function HeroSection() {
           </h1>
 
           {/* 副標題 */}
-          <p className="mt-8 max-w-2xl text-lg md:text-xl text-stone-600 leading-relaxed animate-fade-in-up delay-400">
-            我們相信，連結的價值不在
-            <span className="font-semibold text-stone-800">數量</span>
-            ，而在
-            <span className="font-semibold text-stone-900">深度</span>
-          </p>
+          <TextAnimate
+            animation="blurInUp"
+            by="character"
+            once
+            className="mt-8 max-w-2xl text-lg md:text-xl text-stone-600 leading-relaxed"
+          >
+            我們相信，連結的價值不在數量，而在深度
+          </TextAnimate>
 
           {/* Waitlist 表單 */}
-          <div className="mt-10 w-full flex justify-center animate-fade-in-up delay-600">
+          <div className="mt-10 w-full flex justify-center">
             <WaitlistForm />
           </div>
 
           {/* CTA 按鈕 */}
-          <div className="mt-6 flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-800">
+          <div className="mt-6 flex flex-col sm:flex-row gap-4">
             <Link href="/become-a-mentor">
               <ShimmerButton className="shadow-2xl">
                 <span className="text-center text-base font-semibold leading-none tracking-tight whitespace-pre-wrap text-white">
@@ -74,7 +77,7 @@ export function HeroSection() {
           </div>
 
           {/* 底部引言 */}
-          <div className="mt-16 max-w-xl animate-fade-in-up delay-800">
+          <div className="mt-16 max-w-xl">
             <p className="text-sm text-stone-500 italic">
               因為我們相信，每一次真實的交流，都有改變人生的可能。
             </p>

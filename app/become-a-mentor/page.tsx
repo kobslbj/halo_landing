@@ -5,6 +5,7 @@ import { submitMentorApplication } from "@/app/actions";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
+import { LightRays } from "@/components/ui/light-rays";
 
 type Step = "name" | "email" | "profile" | "topics" | "success";
 
@@ -233,7 +234,16 @@ export default function BecomeMentorPage() {
   };
 
   return (
-    <div className="min-h-screen bg-stone-50 dark:bg-stone-950 flex flex-col">
+    <div className="min-h-screen bg-stone-50 dark:bg-stone-950 flex flex-col relative overflow-hidden">
+      {/* Light Rays 效果 */}
+      <LightRays
+        count={8}
+        color="rgba(249, 115, 22, 0.15)"
+        blur={40}
+        speed={16}
+        length="80vh"
+      />
+
       {/* Progress Bar */}
       {currentStep !== "success" && (
         <div className="fixed top-0 left-0 right-0 h-1 bg-stone-200 dark:bg-stone-800 z-50">
@@ -245,7 +255,7 @@ export default function BecomeMentorPage() {
       )}
 
       {/* Main Content */}
-      <div className="flex-1 flex items-center justify-center px-6 py-12">
+      <div className="flex-1 flex items-center justify-center px-6 py-12 relative z-10">
         <div className="w-full max-w-3xl">
           {renderStep()}
 
