@@ -6,7 +6,7 @@ import { LightRays } from "@/components/ui/light-rays";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { WaitlistForm } from "@/components/waitlist-form";
-
+import { NumberTicker } from "@/components/ui/number-ticker";
 interface HeroSectionProps {
   waitlistCount: number;
 }
@@ -73,7 +73,7 @@ export function HeroSection({ waitlistCount }: HeroSectionProps) {
                 <span>
                   已有{" "}
                   <span className="font-semibold text-orange-600">
-                    {waitlistCount}
+                    <NumberTicker value={waitlistCount} />
                   </span>{" "}
                   人加入等候名單
                 </span>
