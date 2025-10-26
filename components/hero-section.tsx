@@ -1,13 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { Sparkles, Coffee } from "lucide-react";
+import { Sparkles, Coffee, Users } from "lucide-react";
 import { LightRays } from "@/components/ui/light-rays";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { WaitlistForm } from "@/components/waitlist-form";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  waitlistCount: number;
+}
+
+export function HeroSection({ waitlistCount }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-stone-50 via-white to-stone-100">
       {/* Light Rays 效果 */}
@@ -61,8 +65,20 @@ export function HeroSection() {
           </TextAnimate>
 
           {/* Waitlist 表單 */}
-          <div className="mt-10 w-full flex justify-center">
+          <div className="mt-10 w-full flex flex-col items-center gap-4">
             <WaitlistForm />
+            {waitlistCount > 0 && (
+              <div className="flex items-center gap-2 text-sm text-stone-600">
+                <Users className="w-4 h-4 text-orange-600" />
+                <span>
+                  已有{" "}
+                  <span className="font-semibold text-orange-600">
+                    {waitlistCount}
+                  </span>{" "}
+                  人加入等候名單
+                </span>
+              </div>
+            )}
           </div>
 
           {/* CTA 按鈕 */}

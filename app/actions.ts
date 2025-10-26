@@ -48,3 +48,30 @@ export async function submitFeedback(feedback: string) {
 
   return { success: true };
 }
+
+export async function getWaitlistCount() {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/rpc/get_waitlist_count`,
+      {
+        method: "POST",
+        headers: {
+          apikey: process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
+          "Content-Type": "application/json",
+        },
+        cache: "no-store",
+      },
+    );
+
+    if (!response.ok) {
+      // 如果 RPC 不存在,回傳 0
+      return { count: 0 };
+    }
+
+    const count = await response.json();
+    return { count: count || 0 };
+  } catch (error) {
+    console.error("Error getting waitlist count:", error);
+    return { count: 0 };
+  }
+}
