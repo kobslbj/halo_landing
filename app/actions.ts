@@ -34,3 +34,17 @@ export async function submitMentorApplication(data: {
 
   return { success: true };
 }
+
+export async function submitFeedback(feedback: string) {
+  const supabase = await createClient();
+
+  const { error } = await supabase
+    .from("landing_page_feedback")
+    .insert([{ feedback }]);
+
+  if (error) {
+    return { success: false, error: error.message };
+  }
+
+  return { success: true };
+}

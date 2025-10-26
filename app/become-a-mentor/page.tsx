@@ -208,20 +208,20 @@ export default function BecomeMentorPage() {
       case "success":
         return (
           <div className="text-center space-y-6 animate-fade-in-up">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 dark:bg-green-900/30 mb-4">
-              <Check className="w-10 h-10 text-green-600 dark:text-green-400" />
+            <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-green-100 dark:bg-green-900/30 mb-4">
+              <Check className="w-8 h-8 sm:w-10 sm:h-10 text-green-600 dark:text-green-400" />
             </div>
             <div className="space-y-3">
-              <h1 className="text-4xl md:text-5xl font-bold text-stone-900 dark:text-stone-100">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-stone-900 dark:text-stone-100 px-4">
                 感謝您的申請！
               </h1>
-              <p className="text-xl text-stone-600 dark:text-stone-400 max-w-lg mx-auto">
+              <p className="text-lg sm:text-xl text-stone-600 dark:text-stone-400 max-w-lg mx-auto px-4">
                 我們已收到您的 Mentor 申請，會在審核後儘快與您聯繫。
               </p>
             </div>
             <Link
               href="/"
-              className="inline-block mt-8 px-8 py-4 rounded-xl font-medium text-lg bg-orange-600 hover:bg-orange-700 text-white transition-all duration-200"
+              className="inline-block mt-8 px-8 py-4 rounded-xl font-medium text-base sm:text-lg bg-orange-600 hover:bg-orange-700 text-white transition-all duration-200"
             >
               返回首頁
             </Link>
@@ -268,16 +268,16 @@ export default function BecomeMentorPage() {
 
           {/* Action Buttons */}
           {currentStep !== "success" && (
-            <div className="mt-12 flex items-center gap-4">
+            <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={handleNext}
                 disabled={isSubmitting}
                 className={cn(
-                  "inline-flex items-center gap-2 px-8 py-4 rounded-xl font-medium text-lg",
+                  "inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium text-base sm:text-lg",
                   "bg-orange-600 hover:bg-orange-700 text-white",
                   "disabled:opacity-50 disabled:cursor-not-allowed",
                   "transition-all duration-200",
-                  "group",
+                  "group w-full sm:w-auto",
                 )}
               >
                 {isSubmitting ? (
@@ -295,7 +295,7 @@ export default function BecomeMentorPage() {
                 )}
               </button>
 
-              <p className="text-stone-500 text-sm">
+              <p className="text-stone-500 text-sm hidden sm:block">
                 按{" "}
                 <kbd className="px-2 py-1 bg-stone-200 dark:bg-stone-800 rounded">
                   Enter ↵
